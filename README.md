@@ -1,78 +1,36 @@
-# Crystallize - Remix Run - Boilerplate
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# Installation
+## Getting Started
 
-```bash
-npx @crystallize/cli-next@latest install remix-run
-```
-
-And you got your project running thanks to :
+First, run the development server:
 
 ```bash
-cd remix-run && application
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-# Docker services
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-By default, docker is not used.
-In the `provisioning/dev/` folder you will see a `docker-compose.yaml` that can be used.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```bash
-make serve
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-This will start the Docker network, starting Mailcatch and Redis.
-You then need to adapt the `.env` file of course to start using those services.
+## Learn More
 
-# Custom Local domain and HTTPS
+To learn more about Next.js, take a look at the following resources:
 
-For a better experience and respect the [Twelve-Facter App](https://12factor.net/dev-prod-parity) we recomend to have local domain
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-And everything is ready for you too.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Add local domains
+## Deploy on Vercel
 
-Add an entry for the subdomains in your `/etc/hosts` file:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Using /etc/hosts
-
-```
-127.0.0.1 SUPERFASTPROJECTIDENTIFIER.superfast.local
-```
-
-### Using dnsmasq for multiple tenants
-
-You only ever need to do this once for all Superfast stores you might set up
-
-```
-brew install dnsmasq
-echo "address=/superfast.local/127.0.0.1" >> /opt/homebrew/etc/dnsmasq.conf
-sudo mkdir -p /etc/resolver && echo "nameserver 127.0.0.1" > /etc/resolver/local
-sudo brew services restart dnsmasq
-```
-
-# Gotchas
-
-`make serve` will:
-
--   run the node project on HTTP
--   run the Caddy proxy on HTTPS
--   run the Docker Network
-
-And then you can
-
--   Frontend: https://furniture.superfast.local
--   Mailcatcher - Web: http://localhost:3022
--   Mailcatcher SMTP: http://localhost:3021
--   Redis: tcp://localhost:3023
-
-> you can stop non stopped services with `make stop`
-
-> Note: to connect to Redis: `docker run --rm --net=host -it redis redis-cli -h 127.0.0.1 -p 3023`
-
-Also
-
--   Frontend run in HTTP on 3018
--   Frontend Live Reload WebScoket run in HTTP on 3019
--   Caddy enables HTTPS on top of them all
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
