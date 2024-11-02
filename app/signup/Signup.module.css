@@ -1,0 +1,66 @@
+/* app/signup/Signup.module.css */
+
+.formContainer {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.formTitle {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.label {
+  font-size: 14px;
+  color: #666;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #0070f3;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #0070f3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #005bb5;
+}
+
+.responseContainer {
+  margin-top: 20px;
+  background-color: #e8f4fc;
+  padding: 15px;
+  border-radius: 5px;
+  color: #333;
+}
